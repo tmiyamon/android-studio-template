@@ -103,6 +103,9 @@ dependencies {
     wearApp project(':${WearprojectName}')
     compile 'com.google.android.gms:play-services:+'
 </#if>
-    androidTestCompile 'org.robolectric:robolectric:${verRobolectric}'
+    androidTestCompile('org.robolectric:robolectric:${verRobolectric}') {
+        exclude module: 'commons-logging'
+        exclude module: 'httpclient'
+    }
     androidTestCompile 'com.jayway.android.robotium:robotium-solo:${verRobotium}'
 }
